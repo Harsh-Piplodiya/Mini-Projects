@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="P11_DAA-Page.css">
+    <title>DAA Documentation</title>
+</head>
+<body>
+    <main id="main-doc">
+        <nav id="navbar">
+            <header id="nav-header"><b>Algorithms Documentation</b></header>
+            <ul id="nav-list">
+                <li><a href="#Bubble_Sort" class="nav-link">Bubble Sort</a></li>
+                <li><a href="#Selection_Sort" class="nav-link">Selection Sort</a></li>
+                <li><a href="#Insertion_Sort" class="nav-link">Insertion Sort</a></li>
+                <li><a href="#Cyclic_Sort" class="nav-link">Cyclic Sort</a></li>
+                <li><a href="#Merge_Sort" class="nav-link">Merge Sort</a></li>
+            </ul>
+        </nav>
+
+        <section class="main-section" id="Bubble_Sort">
+            <header id="bubble_sort"><h2>Bubble Sort</h2></header>
+            <p>In <em>Bubble Sort</em>, we compare the adjacent elements to each other to sort the array, with each pass of the loop, the largest element is at it's correct position in the array and the array sort space is reduced to one less for the next largest element to be set at it's right position.</p>
+            <ul>
+                <li>Time Complexity: O(n<sup>2</sup>)</li>
+            </ul>
+            <pre>
+                <code>
+                    static void bubbleSort(int[] arr){
+                        boolean swapped;
+                        //run this for n-1 i.e (<= arr.length-1) or (< arr.length)
+                        for (int i = 0; i < arr.length; i++) {
+                            swapped = false;
+                            //max element will be at the last respective index with each pass
+                            for (int j = 1; j < arr.length - i; j++) {
+                                if(arr[j] < arr[j-1]){
+                                    swap(arr, j, j-1);
+                                    swapped = true;
+                                }
+                            }
+                            /* if no swap has occured in the array for a particular value of i
+                            then break the loop. */
+                            // i.e. (!false = true or swapped == false) than break the loop
+                            if(!swapped){ 
+                                break;
+                            }
+                        }
+                    }
+                
+                    static void swap(int[] arr, int first, int second){
+                        int temp = arr[first];
+                        arr[first] = arr[second];
+                        arr[second] = temp;
+                    }
+                </code>
+            </pre>
+            <p>you can now simply call the funtion 'bubbleSort(int[] arr)' to sort the array using <em>Bubble Sort</em>.</p>
+        </section>
+        <section class="main-section" id="Selection_Sort">
+            <header id="selection_sort"><h2>Selection Sort</h2></header>
+            <p>In <em>Selection Sort</em>, we find either the largest element or the smallest element from the sorting space and put it at it's right place with each pass of the loop.</p>
+            <ul>
+                <li>Time Complexity: O(n<sup>2</sup>)</li>
+            </ul>
+            <pre>
+                <code>
+                    static void selectionSort(int[] arr){
+                        for (int i = 0; i < arr.length; i++) {
+                            int last = arr.length - i - 1;
+                            int maxIndex = greatest(arr, 0, last);
+                            swap(arr, maxIndex, last);
+                        }
+                    }
+                
+                    /* This function finds the max item from the array,
+                    with the end-index of the array being (arr.length - i - 1) */
+                    static int greatest(int[] arr, int start, int end){
+                        int maxVal = start;
+                        for (int i = start; i <= end; i++) {
+                            if(arr[maxVal] < arr[i]){
+                                maxVal = i; 
+                            }
+                        }
+                        return maxVal;
+                    }
+                
+                    //this function will swap the max-item-index to it's respective last-index
+                    static void swap(int[] arr, int first, int second){
+                        int temp = arr[first];
+                        arr[first] = arr[second];
+                        arr[second] = temp;
+                    }
+                </code>
+            </pre>
+            <p>you can now simply call the funtion 'selectionSort(int[] arr)' to sort the array using <em>Selection Sort</em>.</p>
+        </section>
+        <section class="main-section" id="Insertion_Sort">
+            <header id="insertion_sort"><h2>Insertion Sort</h2></header>
+            <p>In <em>Insertion Sort</em>, the array is sorted in parts, like the 1st 2 elements will be sorted and than the 1st three elements will be sorted and so on...In others the sorting space was being reduced but in this the sorting space is increasing with each pass.</p>
+            <ul>
+                <li>Time Complexity: O(n<sup>2</sup>)</li>
+            </ul>
+            <pre>
+                <code>
+                    static void insertionSort(int[] arr){
+                        //run this for n-2 i.e (<= arr.length-2) or (< arr.length-1)
+                        for (int i = 0; i < arr.length - 1; i++) {
+                            for (int j = i+1; j > 0 ; j--) {
+                                if(arr[j] < arr[j-1]){
+                                    swap(arr, j, j-1);
+                                } else{
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                
+                    static void swap(int[] arr, int first, int second){
+                        int temp = arr[first];
+                        arr[first] = arr[second];
+                        arr[second] = temp;
+                    }
+                </code>
+            </pre>
+            <p>you can now simply call the funtion 'insertionSort(int[] arr)' to sort the array using <em>Insertion Sort</em>.</p>
+        </section>
+        <section class="main-section" id="Cyclic_Sort">
+            <header id="cyclic_sort"><h2>Cyclic Sort</h2></header>
+            <p><em>Cyclic Sort</em> should be used when the no.s in the given array are in range (1, n). In this sorting algorithm we sort the elements by putting them in their right position by comparing them with their 'supposed' correct index positions in the array.</p>
+            <ul>
+                <li>Time Complexity: O(n)</li>
+            </ul>
+            <pre>
+                <code>
+                    static void cyclicSort(int[] arr){
+                        int i = 0;
+                        while(i < arr.length){
+                            int cIdx = arr[i] - 1;
+                            if(arr[cIdx] == arr[i]){
+                                i++;
+                            } else{
+                                int temp = arr[i];
+                                arr[i] = arr[cIdx];
+                                arr[cIdx] = temp;
+                            }
+                        }
+                    }
+                </code>
+            </pre>
+            <p>you can now simply call the funtion 'cyclicSort(int[] arr)' to sort the array using <em>Cyclic Sort</em>.</p>
+        </section>
+        <section class="main-section" id="Merge_Sort">
+            <header id="merge_sort"><h2>Merge Sort</h2></header>
+            <p><em>Merge Sort</em> uses the divide-and-conquer approach, as the name suggests it divides the arrya into half and it does so until we have only 1-1 elements left and than it starts merging them up in sorted order and does so until we have a merged sorted array.</p>
+            <ul>
+                <li>Time Complexity: O(nlog(n))</li>
+                <li>Space Complexity: O(n)</li>
+            </ul>
+            <pre>
+                <code>
+                    static int[] mergeSort(int[] arr){
+                        if(arr.length == 1){
+                            return arr;
+                        }
+                
+                        int mid = arr.length / 2;
+                
+                        int[] left = mergeSort(Arrays.copyOfRange(arr, 0, mid));
+                        int[] right = mergeSort(Arrays.copyOfRange(arr, mid, arr.length));
+                
+                        return merge(left, right);
+                    }
+                
+                    private static int[] merge(int[] first, int[] second) {
+                        int[] mix = new int[first.length + second.length];
+                
+                        int i = 0, j = 0, k = 0;
+                        while(i < first.length && j < second.length){
+                            if(first[i] < second[j]){
+                                mix[k] = first[i];
+                                i++;
+                            } else {
+                                mix[k] = second[j];
+                                j++;
+                            }
+                            k++;
+                        }
+                
+                        // It is possible that one of the array is still incomplete,
+                        // add the remaining elements of that array
+                        while(i < first.length){
+                            mix[k] = first[i];
+                            i++;
+                            k++;
+                        }
+                
+                        while(j < second.length){
+                            mix[k] = second[i];
+                            j++;
+                            k++;
+                        }
+                
+                        return mix;
+                    }
+                </code>
+            </pre>
+            <p>you can now simply call the funtion 'mergeSort(int[] arr)' to sort the array using <em>Merge Sort</em>.</p>
+        </section>
+    </main>
+</body>
+</html>

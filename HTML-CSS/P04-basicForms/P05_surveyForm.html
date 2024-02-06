@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Anime Survey Form</title>
+        <link href="P05_surveyForm.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1 id="title">Survey Form</h1>
+        <p id="description">Thank you for taking the time to help us better understand your taste in anime.</p>
+
+        <form id="survey-form">
+            <fieldset>
+                <label id="name-label" for="name">Enter Your Name: <input type="text" id="name" required placeholder="Enter your name"></label>
+                <label id="email-label" for="email">Enter Email: <input type="email" id="email" required placeholder="Enter email"></label>
+                <label id="number-label" for="number">Enter Your Age: <input type="number" min="13" max="99" required id="number" placeholder="Enter your age"></label>
+                <label for="dropdown">At what rate do you consume Anime, Daily? 
+                    <select id="dropdown">
+                        <option value="">(Select your rate of consumption)</option>
+                        <option value="1">Seasonal Release Watcher</option>
+                        <option value="2">Likes to Binge the whole thing</option>
+                        <option value="3">25-30 episodes per day</option>
+                    </select>
+                </label>
+            </fieldset>
+            <fieldset>
+                <label>What Genre of Anime do you like the most?</label>
+                <label for="shounen"><input type="radio" id="shounen" name="genre" class="inline" value="1">Shounen</label>
+                <label for="seinen"><input type="radio" id="seinen" name="genre" class="inline" value="2">Seinen</label>
+            </fieldset>
+            <fieldset>
+                <label>How many of the anime given below have you watched?</label>
+                <label for="anime-name"><input type="checkbox" id="anime-name" class="inline" value="1">Attack on Titan</label>
+                <label for="anime-name"><input type="checkbox" id="anime-name" class="inline" value="2">Demon Slayer</label>
+                <label for="anime-name"><input type="checkbox" id="anime-name" class="inline" value="3">Mushoku Tensei</label>
+                <label for="anime-name"><input type="checkbox" id="anime-name" class="inline" value="4">Jujutsu Kaisen</label>
+                <label for="anime-name"><input type="checkbox" id="anime-name" class="inline" value="5">Vinland Saga</label>
+                <label for="anime-name"><input type="checkbox" id="anime-name" class="inline" value="6">Oshi No Ko</label>
+                <label for="anime-name"><input type="checkbox" id="anime-name" class="inline" value="7">Monster</label>
+                <label for="anime-name"><input type="checkbox" id="anime-name" class="inline" value="8">Made in Abyss</label>
+                <label for="anime-name"><input type="checkbox" id="anime-name" class="inline" value="9">Re: Zero</label>
+                <label for="suggestion">Any comments or Suggestions:
+                    <textarea id="suggestion" name="bio" rows="3" cols="30" placeholder="Enter your comment here..."></textarea>
+                </label>
+            </fieldset>
+            <input type="submit" value="Submit" id="submit"/>
+        </form>
+    </body>
+</html>

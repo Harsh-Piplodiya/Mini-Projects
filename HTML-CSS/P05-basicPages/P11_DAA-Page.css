@@ -1,0 +1,108 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    background-color: #eccc7b;
+}
+
+#navbar{
+    background-color: #285340;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 260px;
+    height: 100%;
+    border-right: 3px solid black;
+}
+
+#nav-list{
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-header{
+    color: #eccc7b;
+    text-align: center;
+    padding: 10px 3px;
+    margin: 0;
+}
+
+#navbar li{
+    border-bottom: 2px solid #eccc7b;
+    transition: color 0.3s, background-color 0.3s;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+#navbar li:nth-child(1){
+    border-top: 2px solid #eccc7b;
+}
+
+#navbar li:hover{
+    background-color: #eccc7b;
+}
+
+#navbar li:hover a{
+    color: black;
+}
+
+a{
+    color: #eccc7b;
+    text-decoration: none;
+}
+
+p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+code{
+    display: block;
+    text-align: left;
+    white-space: pre-wrap;
+    position: relative;
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.main-section{
+    display: block;
+    margin-left: 255px;
+    padding: 20px;
+}
+
+/* pre{
+    background-color: #f7f3bc;
+    border-radius: 5%;
+}  */
+
+@media only screen and (max-width: 815px) {
+    #navbar{
+        background-color: #285340;
+        position: absolute;
+        top: 0;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        max-height: 275px;
+        border: none;
+        z-index: 1;
+        border-bottom: 2px solid;
+    }
+}
+
+@media only screen and (max-width: 815px){
+    #navbar ul {
+        border: 1px solid;
+        height: 207px;
+    }
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-XI6auyhxRdltuTzkpK3l2L9U7BycBp1r+LO5/HPz27B7ZjDVEpzqE+XaaJ7Uq3sFQ75aMsvXz1UT69YXo26KUg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="P14_LandingPage.css">
+</head>
+<body>
+    <main>
+        <header id="header">
+            <div id="header-img">
+                <img src="https://lh3.googleusercontent.com/d_S5gxu_S1P6NR1gXeMthZeBzkrQMHdI5uvXrpn3nfJuXpCjlqhLQKH_hbOxTHxFhp5WugVOEcl4WDrv9rmKBDOMExhKU5KmmLFQVg" alt="Google-Pixel Logo">
+            </div>
+            <nav id="nav-bar">
+                <ul>
+                    <li class="nav-link"><a href="#features">Features</a></li>
+                    <li class="nav-link"><a href="#video">Review</a></li>
+                    <li class="nav-link"><a href="#pricing">Pricing</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section id="hero">
+            <form action="https://www.freecodecamp.com/email-submit" id="form">
+                    <label for="email"><h2>Google Pixel Line-up 2023</h2></label>
+                    <input type="email" name="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" placeholder="enter your email" required>
+                    <input type="submit" id="submit" class="btn" value="Get Started">
+            </form>
+        </section>
+        <section id="features">
+            <div class="grid">
+                <div class="desc">
+                    <h3>The Next-Gen AI powered processor</h3>
+                    <p>The Gen-3 Tensor G3 Chipset is the most advanced processor to integrate AI and make task and processes more easy, fast, powerful, and automatic for the user.</p>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="desc">
+                    <h3>The All new Camera Setup</h3>
+                    <p>The Pixel-8 Pro comes with the new and improved Camera Module using advanced AI to make the overall camera experience more rich, enhanced, and more fun.</p>
+                </div>
+            </div>
+        </section>
+        <section class="review">
+            <iframe src="https://www.youtube.com/watch?v=3ZDcr1icSo4" frameborder="0" allowfullscreen id="video"></iframe>
+        </section>
+        <section id="pricing">
+            <div class="product">
+                <div class="name">Pixel-8 Pro</div>
+                <h3>$999</h3>
+                <ul>
+                    <li>6.7" 1-120hz Super Aqua Display</li>
+                    <li>Tensor G3 Chipset</li>
+                    <li>Triple Rear Camera</li>
+                    <li>Starts at 12gb RAM and 128gb Storage</li>
+                </ul>
+                <button class="btn">Select</button>
+            </div>
+            <div class="product">
+                <div class="name">Pixel-8</div>
+                <h3>$699</h3>
+                <ul>
+                    <li>6.2" 60-120hz Super Aqua Display</li>
+                    <li>Tensor G3 Chipset</li>
+                    <li>Dual Rear Camera</li>
+                    <li>Starts at 8gb RAM and 128gb Storage</li>
+                </ul>
+                <button class="btn">Select</button>
+            </div>
+            <div class="product">
+                <div class="name">Pixel-7a</div>
+                <h3>$499</h3>
+                <ul>
+                    <li>6.1" 90hz Display</li>
+                    <li>Tensor G2 Chipset</li>
+                    <li>Dual Rear Camera</li>
+                    <li>Starts at 8gb RAM and 128gb Storage</li>
+                </ul>
+                <button class="btn">Select</button>
+            </div>
+        </section>
+        <footer>
+            <h3><a href="#features">Contact Info</a></h3>
+            <small>&copy; Google-Pixel</small>
+        </footer>
+    </main>
+</body>
+</html>

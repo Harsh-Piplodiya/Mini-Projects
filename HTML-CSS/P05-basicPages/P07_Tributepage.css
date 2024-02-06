@@ -1,0 +1,56 @@
+body{
+    background-color: rgb(241, 26, 26);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#header{
+    color: whitesmoke;
+    padding: 50px 50px 20px 50px;
+}
+
+#titlePara{
+    padding: 0 35% 0 35%;
+}
+
+h1{
+    text-align: center;
+}
+
+img{
+    display: block;
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    max-height: auto;
+}
+
+#img-caption{
+    color: whitesmoke;
+    font-style: italic;
+}
+
+.saga{
+    color: whitesmoke;
+    /* border: 3px;
+    border-style: dashed;
+    border-color: whitesmoke; */
+    margin: auto;
+    padding: 20px 40px;
+}
+
+h3{
+    color: black;
+}
+
+#movies{
+    margin: auto;
+    padding: 20px 40px;
+}
+
+#more-info{
+    padding: 20px 15%;
+}
+
+a{
+    color: whitesmoke;
+}
